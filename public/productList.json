@@ -1,0 +1,110 @@
+{
+    "categories": [
+      {
+        "name": "floor",
+        "products": [
+          { 
+            "id" : 1,
+            "url": ["http://localhost:5173/Floor1.jpg", 
+            "http://localhost:5173/Handle1.jpg"],
+            "name" : "Metropolitan Steel Grey",
+            "title": "floor",
+            "price": 5.99,
+            "type" : "Luxury Vinyl Plank",
+            "description":[
+              "100% Waterproof",
+              "Anti-Microbial Protection"
+            ],
+            "specification":[
+              "Plank Size: 48\"x7\"",
+              "Thickness: 5mm/5.5mm/6mm"
+            ]
+          },
+          { 
+            "id" : 2,
+            "url": ["http://localhost:5173/Floor1.jpg"],
+            "title": "floor",
+            "price": 5.99,
+            "type" : "Luxury Vinyl Plank",
+            "description":[
+              "100% Waterproof",
+              "Anti-Microbial Protection"
+            ],
+            "specification":[
+              "Plank Size: 48\"x7\"",
+              "Thickness: 5mm/5.5mm/6mm"
+            ]
+          },{ 
+            "id" : 3,
+            "url": ["http://localhost:5173/Floor1.jpg"], 
+            "title": "floor",
+            "price": 5.99,
+            "type" : "Luxury Vinyl Plank",
+            "description":[
+              "100% Waterproof",
+              "Anti-Microbial Protection"
+            ],
+            "specification":[
+              "Plank Size: 48\"x7\"",
+              "Thickness: 5mm/5.5mm/6mm"
+            ]
+          },
+          { 
+            "id" : 3,
+            "url": ["http://localhost:5173/Floor1.jpg"], 
+            "title": "floor",
+            "price": 5.99,
+            "type" : "Luxury Vinyl Plank",
+            "description":[
+              "100% Waterproof",
+              "Anti-Microbial Protection"
+            ],
+            "specification":[
+              "Plank Size: 48\"x7\"",
+              "Thickness: 5mm/5.5mm/6mm"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "wall",
+        "products": [
+          { 
+            "id" : 1,
+            "url": ["http://localhost:5173/Room1.jpg"], 
+            "title": "floor",
+            "price": 5.99,
+            "type" : "Luxury Vinyl Plank",
+            "description":[
+              "100% Waterproof",
+              "Anti-Microbial Protection"
+            ],
+            "specification":[
+              "Plank Size: 48\"x7\"",
+              "Thickness: 5mm/5.5mm/6mm"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "hardware",
+        "products": [
+          { 
+            "id" : 1,
+            "url": ["http://localhost:5173/Handle1.jpg"], 
+            "title": "floor",
+            "price": 5.99,
+            "type" : "Luxury Vinyl Plank",
+            "description":[
+              "100% Waterproof",
+              "Anti-Microbial Protection"
+            ],
+            "specification":[
+              "Plank Size: 48\"x7\"",
+              "Thickness: 5mm/5.5mm/6mm"
+            ]
+          }
+        ]
+      }
+    ]
+  }
