@@ -14,6 +14,7 @@ const CategoryProductDisplay = (props)=>{
           })
           .catch((error) => console.error("Error fetching product data:", error));
     }, [props.category]);
+
     const navigate = useNavigate();
     const handleNavigate = (product)=>{
         console.log(product);
@@ -25,15 +26,16 @@ const CategoryProductDisplay = (props)=>{
             <div className='shop-catagory-display-area'>
                 {products.map((product, productIndex) => {
                     const productStyle = {
-                        height: "400px",
-                        width: "400px",
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
+                        // height: "400px",
+                        // width: "400px",
+                        // backgroundSize: "cover",
+                        // backgroundPosition: "center",
                         backgroundImage: `url(${products[productIndex].url[0]})`
                     };
                     return (
                         <div key={productIndex} className='shop-catagory-display-product-container' onClick={()=>handleNavigate(product)}>
                             <div style={productStyle}></div>
+                            <img src={`${products[productIndex].url[0]}`}></img>
                             <span>{product.title}</span>
                         </div>
                        

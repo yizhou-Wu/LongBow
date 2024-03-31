@@ -13,22 +13,23 @@ const ShopePage =()=>{
     return (
         <div>
             <NaviBar></NaviBar>
-            <div className='shop-menu-container'>
-                <a style={{fontSize:"50px"}}>Shop</a>
-                <div className='shop-catagory-container'>
-                    <ul>
-                        {categories.map((category,categoryIndex)=>(
-                            <Fragment key={categoryIndex}>
-                                <li ><a onClick={()=>toggleCategory(category)}>{category}</a></li>
-                                {categoryIndex < categories.length - 1 && <li>|</li>}
-                            </Fragment>
-                        ))}
-                    </ul>
+                <div className='test'>
+                    <div className='shop-catagory-container'>
+                        <ul className='list'>
+                            {categories.map((category,categoryIndex)=>(
+                                <Fragment key={categoryIndex}>
+                                    <li ><a onClick={()=>toggleCategory(category)}>{category}</a></li>
+                                    {categoryIndex < categories.length - 1 && <li>|</li>}
+                                </Fragment>
+                            ))}
+                        </ul>
+                    </div>
                 </div>
-                <hr />
+            <div className='shop-page-container'>
+                <hr /> 
                 <CategoryProductDisplay category={currentCategory}></CategoryProductDisplay>
-
             </div>
+
             <Footer></Footer>
         </div>
     );

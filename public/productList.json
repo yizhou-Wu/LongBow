@@ -63,6 +63,36 @@
               "Plank Size: 48\"x7\"",
               "Thickness: 5mm/5.5mm/6mm"
             ]
+          },
+          { 
+            "id" : 3,
+            "url": ["http://localhost:5173/Floor1.jpg"], 
+            "title": "floor",
+            "price": 5.99,
+            "type" : "Luxury Vinyl Plank",
+            "description":[
+              "100% Waterproof",
+              "Anti-Microbial Protection"
+            ],
+            "specification":[
+              "Plank Size: 48\"x7\"",
+              "Thickness: 5mm/5.5mm/6mm"
+            ]
+          },
+          { 
+            "id" : 3,
+            "url": ["http://localhost:5173/Floor1.jpg"], 
+            "title": "floor",
+            "price": 5.99,
+            "type" : "Luxury Vinyl Plank",
+            "description":[
+              "100% Waterproof",
+              "Anti-Microbial Protection"
+            ],
+            "specification":[
+              "Plank Size: 48\"x7\"",
+              "Thickness: 5mm/5.5mm/6mm"
+            ]
           }
         ]
       },
