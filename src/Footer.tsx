@@ -1,16 +1,37 @@
-// import React from 'react';
-import { useState ,useEffect} from "react";
-import "./Styles.css"
-
 const Footer = () => {
   return (
-    <div className="footer-container">
+    <>
+      <div className="footer-container">
         <div className="contact-container">
-            <a>Contact</a>
-            <a href="mailto:cj.chen@longbowmaterial.com">cj.chen@longbowmaterial.com</a>
-            <a>(949)-562-8469</a>
+          <a>Contact</a>
+          <a href="mailto:cj.chen@longbowmaterial.com">
+            cj.chen@longbowmaterial.com
+          </a>
+          <a>(949)-562-8469</a>
         </div>
-    </div>
+      </div>
+      <style jsx>{`
+        .footer-container {
+          display: flex;
+          height: 200px;
+          width: 100%;
+          align-items: center;
+        }
+
+        .contact-container {
+          display: flex;
+          flex-direction: column;
+          height: 200px;
+          width: 100%;
+          align-items: center;
+          justify-content: center;
+        }
+        .contact-container a:link {
+          color: black;
+          text-decoration: none;
+        }
+      `}</style>
+    </>
   );
 };
 export default Footer;
