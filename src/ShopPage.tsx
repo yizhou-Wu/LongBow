@@ -1,4 +1,3 @@
-import NaviBar from "./NaviBar";
 import Footer from "./Footer";
 import { Fragment } from "react";
 import CategoryProductDisplay from "./CategoryProductDisplay";
@@ -6,27 +5,30 @@ import { useState } from "react";
 const categories = ["floor", "wall", "hardware"];
 const ShopePage = () => {
   const [currentCategory, setCategory] = useState(categories[0]);
-  const toggleCategory = (clickedCategory) => {
+  const toggleCategory = (clickedCategory: string) => {
     setCategory(clickedCategory);
     console.log(currentCategory);
   };
+
   return (
     <>
       <div>
-        <NaviBar></NaviBar>
-        <div className="test">
-          <div className="shop-catagory-container">
-            <ul className="list">
-              {categories.map((category, categoryIndex) => (
-                <Fragment key={categoryIndex}>
-                  <li>
-                    <a onClick={() => toggleCategory(category)}>{category}</a>
-                  </li>
-                  {categoryIndex < categories.length - 1 && <li>|</li>}
-                </Fragment>
-              ))}
-            </ul>
-          </div>
+        <div className="shop-catagory-container">
+          <ul className="list">
+            {categories.map((category, categoryIndex) => (
+              <Fragment key={categoryIndex}>
+                <li>
+                  <a
+                    className={category === currentCategory ? "selected" : ""}
+                    onClick={() => toggleCategory(category)}
+                  >
+                    {category}
+                  </a>
+                </li>
+                {categoryIndex < categories.length - 1 && <li>|</li>}
+              </Fragment>
+            ))}
+          </ul>
         </div>
         <div className="shop-page-container">
           <hr />
@@ -35,7 +37,7 @@ const ShopePage = () => {
           ></CategoryProductDisplay>
         </div>
 
-        <Footer></Footer>
+        <Footer />
       </div>
       <style jsx>{`
         .shop-page-container {
@@ -48,8 +50,17 @@ const ShopePage = () => {
           justify-content: space-between; /* Adjust as needed */
           align-items: center; /* Align items vertically in the container */
           justify-content: center; /* Center items horizontally */
+          padding-top: 3.2rem;
         }
-
+        .shop-catagory-container li a {
+          text-decoration: none; /* Remove default underline */
+          color: #333; /* Default text color */
+          transition: color 0.3s ease; /* Smooth transition for color */
+          cursor: pointer; /* Change cursor to pointer on hover */
+        }
+        .shop-catagory-container li a.selected {
+          border-bottom: 2px solid #666; /* Add underline for selected category */
+        }
         .list {
           list-style: none; /* Remove default list styles */
           padding: 0; /* Remove default padding */
