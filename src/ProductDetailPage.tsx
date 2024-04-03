@@ -21,7 +21,6 @@ const ProductDetailPage = () => {
   };
   return (
     <>
-      <NaviBar></NaviBar>
       <div className="shop-product-diplay-general-container">
         <div className="shop-product-display-area">
           <div className="shop-product-smallImages-container">

@@ -52,16 +52,12 @@ const CategoryProductDisplay = (props) => {
           flex-flow: column nowrap;
         }
 
-        /* .shop-menu-container{
-  display: flex;
-    padding-left: 25px;
-    padding-right: 25px;
-} */
         .shop-catagory-container {
           display: flex;
           justify-content: space-between; /* Adjust as needed */
           align-items: center; /* Align items vertically in the container */
           justify-content: center; /* Center items horizontally */
+          padding-top: 3.2rem;
         }
 
         .list {
