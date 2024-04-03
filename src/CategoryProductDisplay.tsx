@@ -1,14 +1,33 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-const CategoryProductDisplay = (props) => {
-  const [products, setProducts] = useState([]);
+interface Props {
+  category: string;
+}
+
+type Product = {
+  id: 1;
+  url: string[];
+  title: string;
+  price: number;
+  type: string;
+  description: string[];
+  specification: string[];
+};
+
+type CategotyProduct = {
+  name: string;
+  products: Product[];
+};
+
+const CategoryProductDisplay = (props: Props) => {
+  const [products, setProducts] = useState<Product[]>([]);
   useEffect(() => {
     fetch("./productList.json") // Replace with the correct path to your JSON file or API endpoint
       .then((response) => response.json())
       .then((data) => {
         const productsUnderCategory = data.categories.find(
-          (category) => category.name === props.category
+          (category: CategotyProduct) => category.name === props.category
         ).products;
         setProducts(productsUnderCategory);
       })
@@ -16,8 +35,7 @@ const CategoryProductDisplay = (props) => {
   }, [props.category]);
 
   const navigate = useNavigate();
-  const handleNavigate = (product) => {
-    console.log(product);
+  const handleNavigate = (product: Product) => {
     navigate(`/product/${product.id}`, { state: { product } });
   };
   return (
@@ -38,8 +56,8 @@ const CategoryProductDisplay = (props) => {
                 className="shop-catagory-display-product-container"
                 onClick={() => handleNavigate(product)}
               >
-                <div style={productStyle}></div>
-                <img src={`${products[productIndex].url[0]}`}></img>
+                <div style={productStyle} />
+                <img src={`${products[productIndex].url[0]}`} />
                 <span>{product.title}</span>
               </div>
             );
