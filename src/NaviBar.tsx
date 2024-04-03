@@ -71,10 +71,18 @@ const NaviBar = () => {
           color: black;
         }
         .navbar {
+          background-color: #dddddd; /* Hexadecimal representation */
           display: grid;
           grid-template-columns: repeat(12, 1fr);
           align-items: center;
-          padding: 10px 20px;
+          padding: 0.8rem 1.6rem;
+        }
+        .navbar:hover {
+          background-color: hsl(
+            0,
+            0%,
+            80%
+          ); /* Hover color with reduced lightness */
         }
         .nav-links li {
           flex-grow: 1;
@@ -88,9 +96,6 @@ const NaviBar = () => {
           left: 50%;
           transform: translateX(-50%);
           font-size: 30px;
-          /* Example background color */
-          /*   padding: 20px; */
-          /*   border-radius: 5px; */
           z-index: 1;
         }
         .middle-logo {
