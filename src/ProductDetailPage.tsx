@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import Footer from "./Footer";
+import type { Product } from "./CategoryProductDisplay";
 
 const ProductDetailPage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const location = useLocation();
-  const product = location.state.product;
+
+  const product: Product = location.state.product;
   const imageDisplay = {
     width: "600px",
     height: "600px",
@@ -45,7 +47,7 @@ const ProductDetailPage = () => {
 
           <div style={imageDisplay}></div>
           <div className="shop-product-info-display">
-            <h1>{product.name}</h1>
+            <h1>Product name</h1>
             <a>{"$" + product.price}</a>
             <a>{product.type}</a>
             <ul>

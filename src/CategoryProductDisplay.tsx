@@ -5,7 +5,7 @@ interface Props {
   category: string;
 }
 
-type Product = {
+export type Product = {
   id: 1;
   url: string[];
   title: string;
