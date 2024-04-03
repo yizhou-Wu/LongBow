@@ -16,6 +16,7 @@ const Footer = () => {
           height: 200px;
           width: 100%;
           align-items: center;
+          background-color: #dddddd;
         }
 
         .contact-container {
