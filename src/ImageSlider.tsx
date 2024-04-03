@@ -18,7 +18,7 @@ const ImageSlider = () => {
     backgroundImage: `url(${slides[currentIndex].url})`,
     transition: "background-image 0.5s ease-in-out",
   };
-  const goToSlide = (slideIndex) => {
+  const goToSlide = (slideIndex: number) => {
     setCurrentIndex(slideIndex);
   };
   useEffect(() => {

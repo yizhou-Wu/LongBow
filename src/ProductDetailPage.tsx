@@ -1,6 +1,4 @@
-// import React from 'react';
 import { useState } from "react";
-import NaviBar from "./NaviBar";
 import { useLocation } from "react-router-dom";
 import Footer from "./Footer";
 
@@ -16,7 +14,7 @@ const ProductDetailPage = () => {
     backgroundColor: "green",
     backgroundImage: `url(${product.url[currentIndex]})`,
   };
-  const goToSlide = (slideIndex) => {
+  const goToSlide = (slideIndex: number) => {
     setCurrentIndex(slideIndex);
   };
   return (
@@ -24,7 +22,7 @@ const ProductDetailPage = () => {
       <div className="shop-product-diplay-general-container">
         <div className="shop-product-display-area">
           <div className="shop-product-smallImages-container">
-            {product.url.map((u, uIndex) => {
+            {product.url.map((u, urlIndex) => {
               const smallImageDisplay = {
                 width: "100px",
                 height: "100px",
@@ -37,10 +35,10 @@ const ProductDetailPage = () => {
               };
               return (
                 <div
-                  key={uIndex}
+                  key={urlIndex}
                   style={smallImageDisplay}
-                  onClick={() => goToSlide(uIndex)}
-                ></div>
+                  onClick={() => goToSlide(urlIndex)}
+                />
               );
             })}
           </div>
@@ -65,7 +63,7 @@ const ProductDetailPage = () => {
           </div>
         </div>
       </div>
-      <Footer></Footer>
+      <Footer />
       <style jsx>{`
         .shop-product-diplay-general-container {
           height: 1200px;
@@ -117,4 +115,5 @@ const ProductDetailPage = () => {
     </>
   );
 };
+
 export default ProductDetailPage;

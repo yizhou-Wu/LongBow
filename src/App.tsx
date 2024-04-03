@@ -12,8 +12,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<ShopPage />} />
-          {/* <Route path="/product" element ={<ProductDetailPage props={props}/>}/> */}
-          <Route path="/product/:pid" element={<ProductDetailPage />} />
           <Route path="/product/:pid" element={<ProductDetailPage />} />
         </Routes>
       </BrowserRouter>

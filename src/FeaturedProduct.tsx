@@ -14,7 +14,7 @@ const FeaturedProduct = () => {
               key={productIndex}
               className="product"
               style={{ backgroundImage: `url(${products[productIndex].url})` }}
-            ></div>
+            />
           ))}
         </div>
       </div>
