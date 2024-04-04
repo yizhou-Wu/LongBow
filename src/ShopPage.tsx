@@ -75,11 +75,6 @@ const ShopePage = () => {
           padding-right: 25px;
           flex-flow: row wrap;
         }
-        .shop-catagory-display-container {
-          display: flex;
-          padding-left: 25px;
-          padding-right: 25px;
-        }
         .shop-catagory-display-product-container {
           flex: 1 1 25%;
           margin: 2%;
