@@ -71,18 +71,14 @@ const NaviBar = () => {
           color: black;
         }
         .navbar {
-          background-color: #dddddd; /* Hexadecimal representation */
+          background-color: #e8e8e8; /* Hexadecimal representation */
           display: grid;
           grid-template-columns: repeat(12, 1fr);
           align-items: center;
           padding: 0.8rem 1.6rem;
         }
         .navbar:hover {
-          background-color: hsl(
-            0,
-            0%,
-            80%
-          ); /* Hover color with reduced lightness */
+          background-color: #e0e0e0;
         }
         .nav-links li {
           flex-grow: 1;

@@ -18,7 +18,7 @@ function App() {
       <style jsx global>{`
         body {
           font-family: Calibri, Candara, Segoe, Optima, Arial, sans-serif;
-          background-color: #f0f0f0;
+          background-color: #f8f8f8;
           margin: 0;
         }
       `}</style>
