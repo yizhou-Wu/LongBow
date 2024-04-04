@@ -75,6 +75,7 @@ const CategoryProductDisplay = (props: Props) => {
           flex: 1 1 25%;
           margin: 2%;
           padding: 12px;
+          cursor: pointer;
         }
         .product-container img {
           width: 100%;

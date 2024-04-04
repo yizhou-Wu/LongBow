@@ -4,18 +4,11 @@ import Footer from "./Footer";
 
 const Home = () => {
   return (
-    <>
-      <div>
-        <ImageSlider />
-        <FeaturedProduct />
-        <Footer />
-      </div>
-      <style jsx global>{`
-        body {
-          font-family: Calibri, Candara, Segoe, Optima, Arial, sans-serif;
-        }
-      `}</style>
-    </>
+    <div>
+      <ImageSlider />
+      <FeaturedProduct />
+      <Footer />
+    </div>
   );
 };
 export default Home;
