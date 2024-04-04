@@ -40,44 +40,21 @@ const CategoryProductDisplay = (props: Props) => {
   };
   return (
     <>
-      <div className="shop-catagory-display-container">
-        <div className="shop-catagory-display-area">
-          {products.map((product, productIndex) => {
-            const productStyle = {
-              // height: "400px",
-              // width: "400px",
-              // backgroundSize: "cover",
-              // backgroundPosition: "center",
-              backgroundImage: `url(${products[productIndex].url[0]})`,
-            };
-            return (
-              <div
-                key={productIndex}
-                className="shop-catagory-display-product-container"
-                onClick={() => handleNavigate(product)}
-              >
-                <div style={productStyle} />
-                <img src={`${products[productIndex].url[0]}`} />
-                <span>{product.title}</span>
-              </div>
-            );
-          })}
-        </div>
+      <div className="products-display-area">
+        {products.map((product, productIndex) => {
+          return (
+            <div
+              key={productIndex}
+              className="product-container"
+              onClick={() => handleNavigate(product)}
+            >
+              <img src={`${products[productIndex].url[0]}`} />
+              <span>{product.title}</span>
+            </div>
+          );
+        })}
       </div>
       <style jsx>{`
-        .shop-page-container {
-          display: flex;
-          flex-flow: column nowrap;
-        }
-
-        .shop-catagory-container {
-          display: flex;
-          justify-content: space-between; /* Adjust as needed */
-          align-items: center; /* Align items vertically in the container */
-          justify-content: center; /* Center items horizontally */
-          padding-top: 3.2rem;
-        }
-
         .list {
           list-style: none; /* Remove default list styles */
           padding: 0; /* Remove default padding */
@@ -88,24 +65,18 @@ const CategoryProductDisplay = (props: Props) => {
           padding: 10px 20px; /* Adjust padding as needed */
           border-radius: 5px; /* Add some border radius for styling */
         }
-        .shop-catagory-display-area {
+        .products-display-area {
           display: flex;
           padding-left: 25px;
           padding-right: 25px;
           flex-flow: row wrap;
         }
-        .shop-catagory-display-container {
-          display: flex;
-          padding-left: 25px;
-          padding-right: 25px;
-        }
-        .shop-catagory-display-product-container {
+        .product-container {
           flex: 1 1 25%;
           margin: 2%;
           padding: 12px;
-          /* border: 2px solid #000; */
         }
-        .shop-catagory-display-product-container img {
+        .product-container img {
           width: 100%;
         }
       `}</style>
