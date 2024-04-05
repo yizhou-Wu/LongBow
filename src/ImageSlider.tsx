@@ -34,21 +34,19 @@ const ImageSlider = () => {
     };
   }, [currentIndex]);
   return (
-    <>
-      <div className="image-slider-container">
-        <div className="image-slider">
-          <div style={imageContainerStyle}></div>
-          <div className="dot-container">
-            {slides.map((slide, slideIndex) => (
-              <div
-                className="dot-index"
-                key={slideIndex}
-                onClick={() => goToSlide(slideIndex)}
-              >
-                •
-              </div>
-            ))}
-          </div>
+    <div className="image-slider-container">
+      <div className="image-slider">
+        <div style={imageContainerStyle}></div>
+        <div className="dot-container">
+          {slides.map((slide, slideIndex) => (
+            <div
+              className="dot-index"
+              key={slideIndex}
+              onClick={() => goToSlide(slideIndex)}
+            >
+              •
+            </div>
+          ))}
         </div>
       </div>
       <style jsx>
@@ -81,7 +79,7 @@ const ImageSlider = () => {
           }
         `}
       </style>
-    </>
+    </div>
   );
 };
 export default ImageSlider;

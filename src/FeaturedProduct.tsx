@@ -25,6 +25,7 @@ const FeaturedProduct = () => {
             flex-direction: column;
             align-items: center;
             padding: 20px;
+            margin: 5.2rem;
           }
           .featured-product-container-title {
             font-size: 2.5rem;
