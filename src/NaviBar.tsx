@@ -68,17 +68,27 @@ const NaviBar = () => {
       <style jsx>{`
         a {
           text-decoration: none;
-          color: black;
+          color: white;
+        }
+
+        nav:hover {
+          color: black; /* Change text color to black on hover */
         }
         .navbar {
-          background-color: #e8e8e8; /* Hexadecimal representation */
           display: grid;
           grid-template-columns: repeat(12, 1fr);
           align-items: center;
           padding: 0.8rem 1.6rem;
+          color: white;
         }
         .navbar:hover {
           background-color: #e0e0e0;
+        }
+        .navbar:hover li a {
+          color: black;
+        }
+        .navbar:hover .centered-div a {
+          color: black;
         }
         .nav-links li {
           flex-grow: 1;
@@ -103,6 +113,10 @@ const NaviBar = () => {
           padding: 0;
           grid-column: span 3;
         }
+        .nav-links:hover {
+          color: black;
+        }
+
         .three-links {
           list-style: none;
           display: flex;
