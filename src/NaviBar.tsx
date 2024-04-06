@@ -5,18 +5,34 @@ import { RxDropdownMenu } from "react-icons/rx";
 const NaviBar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
   useEffect(() => {
     const checkScreenSize = () => {
       setIsSmallScreen(window.innerWidth <= 800);
     };
 
-    // Check screen size on component mount and window resize
     checkScreenSize();
     window.addEventListener("resize", checkScreenSize);
 
     // Cleanup event listener on component unmount
     return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset;
+      setIsScrolled(scrollTop > 0); // Set isScrolled to true if scrollTop is greater than 0
+    };
+
+    // Add scroll event listener when component mounts
+    window.addEventListener("scroll", handleScroll);
+
+    // Remove scroll event listener when component unmounts
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []); // Empty dependency array to run effect only once on mount
 
   const toggleDropdown = () => {
     console.log("toggleDropdown");
@@ -27,7 +43,7 @@ const NaviBar = () => {
   };
   return (
     <div>
-      <nav className="navbar">
+      <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
         {isSmallScreen ? (
           <div className="dropdown">
             <button className="dropbtn" onClick={toggleDropdown}>
@@ -66,23 +82,36 @@ const NaviBar = () => {
         )}
       </nav>
       <style jsx>{`
-        a {
+        .navbar a {
           text-decoration: none;
           color: white;
         }
 
-        nav:hover {
-          color: black; /* Change text color to black on hover */
-        }
         .navbar {
           display: grid;
           grid-template-columns: repeat(12, 1fr);
           align-items: center;
           padding: 0.8rem 1.6rem;
           color: white;
+          z-index: 99;
+          position: fixed;
+          width: 100%;
         }
+
+        .navbar.scrolled {
+          background-color: #e0e0e0;
+          color: black;
+        }
+        .navbar.scrolled li a {
+          color: black;
+        }
+        .navbar.scrolled .centered-div a {
+          color: black;
+        }
+
         .navbar:hover {
           background-color: #e0e0e0;
+          color: black;
         }
         .navbar:hover li a {
           color: black;
