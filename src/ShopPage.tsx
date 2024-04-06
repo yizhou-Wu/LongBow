@@ -2,6 +2,7 @@ import Footer from "./Footer";
 import { Fragment } from "react";
 import CategoryProductDisplay from "./CategoryProductDisplay";
 import { useState } from "react";
+import NaviBar from "./NaviBar";
 
 const categories = ["floor", "wall", "hardware"];
 const ShopePage = () => {
@@ -12,7 +13,8 @@ const ShopePage = () => {
 
   return (
     <>
-      <div>
+      <NaviBar isInHomePage={false} />
+      <div className="shop-container">
         <div className="shop-catagory-container">
           <ul className="list">
             {categories.map((category, categoryIndex) => (
@@ -30,17 +32,16 @@ const ShopePage = () => {
             ))}
           </ul>
         </div>
-        <div className="shop-page-container">
-          <hr />
-          <CategoryProductDisplay category={currentCategory} />
-        </div>
-
-        <Footer />
+        <CategoryProductDisplay category={currentCategory} />
       </div>
+      <Footer />
+
       <style jsx>{`
-        .shop-page-container {
+        .shop-container {
+          gap: 4rem;
           display: flex;
-          flex-flow: column nowrap;
+          flex-direction: column;
+          margin-top: 3.6rem;
         }
 
         .shop-catagory-container {
@@ -48,7 +49,7 @@ const ShopePage = () => {
           justify-content: space-between; /* Adjust as needed */
           align-items: center; /* Align items vertically in the container */
           justify-content: center; /* Center items horizontally */
-          padding-top: 3.2rem;
+          margin-top: 3.6rem;
         }
         .shop-catagory-container li a {
           text-decoration: none; /* Remove default underline */

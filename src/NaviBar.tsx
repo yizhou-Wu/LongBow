@@ -1,8 +1,11 @@
-// import React from 'react';
 import { useEffect, useState } from "react";
 import { RxDropdownMenu } from "react-icons/rx";
 
-const NaviBar = () => {
+interface Props {
+  isInHomePage?: boolean;
+}
+
+const NaviBar = (props: Props) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -15,7 +18,6 @@ const NaviBar = () => {
     checkScreenSize();
     window.addEventListener("resize", checkScreenSize);
 
-    // Cleanup event listener on component unmount
     return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
 
@@ -24,7 +26,6 @@ const NaviBar = () => {
       const scrollTop = window.pageYOffset;
       setIsScrolled(scrollTop > 0); // Set isScrolled to true if scrollTop is greater than 0
     };
-
     // Add scroll event listener when component mounts
     window.addEventListener("scroll", handleScroll);
 
@@ -32,7 +33,7 @@ const NaviBar = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []); // Empty dependency array to run effect only once on mount
+  }, []);
 
   const toggleDropdown = () => {
     console.log("toggleDropdown");
@@ -42,8 +43,12 @@ const NaviBar = () => {
     setIsDropdownOpen(false);
   };
   return (
-    <div>
-      <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
+    <>
+      <nav
+        className={`navbar ${isScrolled ? "scrolled" : ""} ${
+          props.isInHomePage ? "" : "notHome"
+        }`}
+      >
         {isSmallScreen ? (
           <div className="dropdown">
             <button className="dropbtn" onClick={toggleDropdown}>
@@ -91,21 +96,25 @@ const NaviBar = () => {
           display: grid;
           grid-template-columns: repeat(12, 1fr);
           align-items: center;
-          padding: 0.8rem 1.6rem;
+          padding: 0.4rem;
           color: white;
           z-index: 99;
           position: fixed;
           width: 100%;
+          height: 3.2rem;
         }
 
-        .navbar.scrolled {
+        .navbar.scrolled,
+        .navbar.notHome {
           background-color: #e0e0e0;
           color: black;
         }
-        .navbar.scrolled li a {
+        .navbar.scrolled li a,
+        .navbar.notHome li a {
           color: black;
         }
-        .navbar.scrolled .centered-div a {
+        .navbar.scrolled .centered-div a,
+        .navbar.notHome .centered-div a {
           color: black;
         }
 
@@ -186,7 +195,7 @@ const NaviBar = () => {
           display: block;
         }
       `}</style>
-    </div>
+    </>
   );
 };
 export default NaviBar;
