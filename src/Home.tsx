@@ -1,16 +1,16 @@
-import ImageSlider from "./ImageSlider";
 import FeaturedProduct from "./FeaturedProduct";
 import Footer from "./Footer";
-import CoverSlider from "./CoverSlider";
+import ImageSlider from "./ImageSlider";
+import NaviBar from "./NaviBar";
 
 const Home = () => {
   return (
-    <div>
-      {/* <ImageSlider /> */}
-      <CoverSlider />
+    <>
+      <NaviBar isInHomePage={true} />
+      <ImageSlider />
       <FeaturedProduct />
       <Footer />
-    </div>
+    </>
   );
 };
 export default Home;
