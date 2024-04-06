@@ -12,7 +12,7 @@ const NaviBar = (props: Props) => {
 
   useEffect(() => {
     const checkScreenSize = () => {
-      setIsSmallScreen(window.innerWidth <= 800);
+      setIsSmallScreen(window.innerWidth <= 600);
     };
 
     checkScreenSize();
@@ -165,7 +165,7 @@ const NaviBar = (props: Props) => {
         }
 
         .dropbtn {
-          background-color: white;
+          background-color: transparent;
           color: #333;
           border: none;
           cursor: pointer;
@@ -193,6 +193,11 @@ const NaviBar = (props: Props) => {
 
         .dropdown:hover .dropdown-content {
           display: block;
+        }
+
+        .custom-icon {
+          color: #007bff; /* Custom color for the icon */
+          font-size: 24px; /* Custom font size for the icon */
         }
       `}</style>
     </>
