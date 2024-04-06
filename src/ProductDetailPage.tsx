@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import Footer from "./Footer";
 import type { Product } from "./CategoryProductDisplay";
+import NaviBar from "./NaviBar";
 
 const ProductDetailPage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -9,8 +10,7 @@ const ProductDetailPage = () => {
 
   const product: Product = location.state.product;
   const imageDisplay = {
-    width: "600px",
-    height: "600px",
+    width: "50vh",
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundColor: "green",
@@ -21,9 +21,10 @@ const ProductDetailPage = () => {
   };
   return (
     <>
-      <div className="shop-product-diplay-general-container">
-        <div className="shop-product-display-area">
-          <div className="shop-product-smallImages-container">
+      <NaviBar />
+      <div className="container">
+        <div className="display-area">
+          <div className="images-container">
             {product.url.map((u, urlIndex) => {
               const smallImageDisplay = {
                 width: "100px",
@@ -64,28 +65,28 @@ const ProductDetailPage = () => {
             </ul>
           </div>
         </div>
+        <Footer />
       </div>
-      <Footer />
+
       <style jsx>{`
-        .shop-product-diplay-general-container {
-          height: 1200px;
-          width: 100%;
+        .container {
           display: flex;
           justify-content: center;
+          margin-top: 4rem;
+          gap: 3.2rem;
         }
-        .shop-product-display-area {
+        .display-area {
           margin-top: 50px;
           display: inline-flex;
-          height: 1000px;
-          width: 1500px;
           justify-content: center;
+          height: 70vh;
         }
-        .shop-product-smallImages-container {
+        .images-container {
           display: flex;
           flex-direction: column;
           margin-left: 50px;
           width: 110px;
-          height: 1000px;
+          height: fit-content;
         }
         .shop-product-image-display {
           width: 600px;
@@ -96,7 +97,6 @@ const ProductDetailPage = () => {
           flex-direction: column;
           margin-left: 50px;
           width: 600px;
-          height: 1000px;
         }
         .shop-product-info-display h1 {
           font-size: 50px;
