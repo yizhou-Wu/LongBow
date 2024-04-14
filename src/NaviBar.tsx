@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { RxDropdownMenu } from "react-icons/rx";
 
 interface Props {
   isInHomePage?: boolean;
@@ -12,7 +11,7 @@ const NaviBar = (props: Props) => {
 
   useEffect(() => {
     const checkScreenSize = () => {
-      setIsSmallScreen(window.innerWidth <= 600);
+      setIsSmallScreen(window.innerWidth <= 700);
     };
 
     checkScreenSize();
@@ -23,7 +22,7 @@ const NaviBar = (props: Props) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop = window.pageYOffset;
+      const scrollTop = window.scrollY;
       setIsScrolled(scrollTop > 0); // Set isScrolled to true if scrollTop is greater than 0
     };
     // Add scroll event listener when component mounts
@@ -52,20 +51,25 @@ const NaviBar = (props: Props) => {
         {isSmallScreen ? (
           <div className="dropdown">
             <button className="dropbtn" onClick={toggleDropdown}>
-              <RxDropdownMenu />
+              <img className="img" src="http://localhost:5173/menu.svg" />
             </button>
             {isDropdownOpen && (
               <div
                 className="dropdown-content"
                 onClick={(e) => e.stopPropagation()}
               >
-                <li>
-                  <a onClick={closeDropdown} href="/shop">
-                    Shop
-                  </a>
-                </li>
-                <li>About</li>
-                <li>Contact</li>
+                <span className="close-btn" onClick={closeDropdown}>
+                  &times;
+                </span>
+                <ul>
+                  <li>
+                    <a onClick={closeDropdown} href="/shop">
+                      Shop
+                    </a>
+                  </li>
+                  <li>About</li>
+                  <li>Contact</li>
+                </ul>
               </div>
             )}
           </div>
@@ -86,7 +90,19 @@ const NaviBar = (props: Props) => {
           </>
         )}
       </nav>
+      <style jsx global>{`
+        /* Global styles */
+        body.no-scroll {
+          overflow: hidden;
+        }
+      `}</style>
       <style jsx>{`
+        .dropdown {
+          position: relative;
+        }
+        .dropdown .dropdown-content li {
+          text-decoration: none;
+        }
         .navbar a {
           text-decoration: none;
           color: white;
@@ -166,32 +182,57 @@ const NaviBar = (props: Props) => {
 
         .dropbtn {
           background-color: transparent;
-          color: #333;
+          color: white;
           border: none;
           cursor: pointer;
         }
 
         .dropdown-content {
           display: none;
-          position: absolute;
-          min-width: 160px;
-          z-index: 1;
-          position: absolute;
-          background-color: #f9f9f9;
-          min-width: 160px;
-          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-          padding: 12px 16px;
-          z-index: 1;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(
+            0,
+            0,
+            0,
+            0.8
+          ); /* Semi-transparent black background */
+          z-index: 999; /* Ensure dropdown is above other content */
         }
-
-        .dropdown-content a {
-          color: black;
-          padding: 8px 12px;
-          display: block;
+        .img {
+          width: 2rem;
+          height: 2rem;
+        }
+        .dropdown-content ul {
+          list-style-type: none;
+          padding: 0;
+          margin: 50vh auto; /* Center vertically */
+          text-align: center;
+        }
+        .dropdown-content ul li {
+          color: white;
           text-decoration: none;
+          font-size: 18px;
+        }
+        .dropdown-content ul li a {
+          color: white;
+          text-decoration: none;
+          font-size: 18px;
+        }
+        .close-btn {
+          color: black;
+          float: right;
+          font-size: 28px;
+          font-weight: bold;
+          margin-right: 2rem;
+          margin-top: 2rem;
+          cursor: pointer;
         }
 
-        .dropdown:hover .dropdown-content {
+        .dropdown-content {
           display: block;
         }
 

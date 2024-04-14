@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Footer from "./Footer";
 import type { Product } from "./CategoryProductDisplay";
@@ -7,6 +7,10 @@ import NaviBar from "./NaviBar";
 const ProductDetailPage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   const product: Product = location.state.product;
   const imageDisplay = {
