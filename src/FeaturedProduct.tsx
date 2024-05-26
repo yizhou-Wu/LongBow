@@ -1,12 +1,9 @@
 const products = [
-  { url: `${process.env.PUBLIC_URL}/Floor1.jpg`, title: "floor" },
-  { url: `${process.env.PUBLIC_URL}/Room1.jpg`, title: "room" },
-  { url: `${process.env.PUBLIC_URL}/Handle1.jpg`, title: "handle" },
+  { url: `${process.env.PUBLIC_URL}Floor1.jpg`, title: "floor" },
+  { url: `${process.env.PUBLIC_URL}Room1.jpg`, title: "room" },
+  { url: `${process.env.PUBLIC_URL}Handle1.jpg`, title: "handle" },
 ];
 const FeaturedProduct = () => {
-  const imagePath = `${process.env.PUBLIC_URL}/Floor1.jpg`;
-  console.log(process.env)
-  console.log(imagePath)
   return (
     <>
       <div className="featured-product-container">

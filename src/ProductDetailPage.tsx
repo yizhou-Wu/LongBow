@@ -23,6 +23,7 @@ const ProductDetailPage = () => {
   const goToSlide = (slideIndex: number) => {
     setCurrentIndex(slideIndex);
   };
+
   return (
     <>
       <NaviBar />

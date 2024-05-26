@@ -41,7 +41,7 @@ const NaviBar = (props: Props) => {
   const closeDropdown = () => {
     setIsDropdownOpen(false);
   };
-  const imageUrl = `${process.env.PUBLIC_URL}/menu.svg`;
+  const imageUrl = `${process.env.PUBLIC_URL}menu.svg`;
   return (
     <>
       <nav
@@ -50,6 +50,7 @@ const NaviBar = (props: Props) => {
         }`}
       >
         {isSmallScreen ? (
+          <>
           <div className="dropdown">
             <button className="dropbtn" onClick={toggleDropdown}>
               <img className="img" src={imageUrl}/>
@@ -74,6 +75,10 @@ const NaviBar = (props: Props) => {
               </div>
             )}
           </div>
+           <div className="centered-div small">
+           <a href="/">LONGBOW MATERIAL</a>
+         </div>
+         </>
         ) : (
           <>
             <div className="centered-div">
@@ -158,6 +163,9 @@ const NaviBar = (props: Props) => {
           transform: translateX(-50%);
           font-size: 30px;
           z-index: 1;
+        }
+        .small{
+          font-size: 20px;
         }
         .middle-logo {
           grid-column: 6 / span 6;

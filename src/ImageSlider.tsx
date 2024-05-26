@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 const ImageSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const images = [
-    `${process.env.PUBLIC_URL}/Floor1.jpg`,
-    `${process.env.PUBLIC_URL}/Room1.jpg`,
-    `${process.env.PUBLIC_URL}/Handle1.jpg`,
+    `${process.env.PUBLIC_URL}Floor1.jpg`,
+    `${process.env.PUBLIC_URL}Room1.jpg`,
+    `${process.env.PUBLIC_URL}Handle1.jpg`,
   ];
 
   useEffect(() => {
