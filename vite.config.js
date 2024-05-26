@@ -8,5 +8,7 @@ export default defineConfig({
         plugins: ['styled-jsx/babel']
       }
     })
-  ]
+  ],
+  define: {'process.env': process.env,
+  'process.env.PUBLIC_URL': JSON.stringify('./public')}
 })
