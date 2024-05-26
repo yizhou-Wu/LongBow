@@ -6,8 +6,8 @@
         {
           "id": 1,
           "url": [
-            "http://localhost:5173/Floor1.jpg",
-            "http://localhost:5173/Handle1.jpg"
+            "Floor1.jpg",
+            "Handle1.jpg"
           ],
           "name": "Metropolitan Steel Grey",
           "title": "floor",
@@ -18,7 +18,7 @@
         },
         {
           "id": 2,
-          "url": ["http://localhost:5173/Floor1.jpg"],
+          "url": ["Floor1.jpg"],
           "title": "floor",
           "price": 5.99,
           "type": "Luxury Vinyl Plank",
@@ -27,7 +27,7 @@
         },
         {
           "id": 3,
-          "url": ["http://localhost:5173/Floor1.jpg"],
+          "url": ["Floor1.jpg"],
           "title": "floor",
           "price": 5.99,
           "type": "Luxury Vinyl Plank",
@@ -36,7 +36,7 @@
         },
         {
           "id": 3,
-          "url": ["http://localhost:5173/Floor1.jpg"],
+          "url": ["Floor1.jpg"],
           "title": "floor",
           "price": 5.99,
           "type": "Luxury Vinyl Plank",
@@ -45,7 +45,7 @@
         },
         {
           "id": 3,
-          "url": ["http://localhost:5173/Floor1.jpg"],
+          "url": ["Floor1.jpg"],
           "title": "floor",
           "price": 5.99,
           "type": "Luxury Vinyl Plank",
@@ -54,7 +54,7 @@
         },
         {
           "id": 3,
-          "url": ["http://localhost:5173/Floor1.jpg"],
+          "url": ["Floor1.jpg"],
           "title": "floor",
           "price": 5.99,
           "type": "Luxury Vinyl Plank",
@@ -68,7 +68,7 @@
       "products": [
         {
           "id": 1,
-          "url": ["http://localhost:5173/Room1.jpg"],
+          "url": ["Room1.jpg"],
           "title": "floor",
           "price": 5.99,
           "type": "Luxury Vinyl Plank",
@@ -82,7 +82,7 @@
       "products": [
         {
           "id": 1,
-          "url": ["http://localhost:5173/Handle1.jpg"],
+          "url": ["Handle1.jpg"],
           "title": "floor",
           "price": 5.99,
           "type": "Luxury Vinyl Plank",

@@ -41,6 +41,7 @@ const NaviBar = (props: Props) => {
   const closeDropdown = () => {
     setIsDropdownOpen(false);
   };
+  const imageUrl = `${process.env.PUBLIC_URL}/menu.svg`;
   return (
     <>
       <nav
@@ -51,7 +52,7 @@ const NaviBar = (props: Props) => {
         {isSmallScreen ? (
           <div className="dropdown">
             <button className="dropbtn" onClick={toggleDropdown}>
-              <img className="img" src="http://localhost:5173/menu.svg" />
+              <img className="img" src={imageUrl}/>
             </button>
             {isDropdownOpen && (
               <div
