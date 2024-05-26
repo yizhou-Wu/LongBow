@@ -17,7 +17,7 @@ const ProductDetailPage = () => {
     width: "50vh",
     backgroundSize: "cover",
     backgroundPosition: "center",
-    backgroundColor: "green",
+    backgroundColor: "white",
     backgroundImage: `url(${product.url[currentIndex]})`,
   };
   const goToSlide = (slideIndex: number) => {
@@ -36,7 +36,7 @@ const ProductDetailPage = () => {
                 height: "100px",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
-                backgroundColor: "yellow",
+                backgroundColor: "white",
                 marginRight: "10px",
                 marginBottom: "10px",
                 backgroundImage: `url(${u})`,
