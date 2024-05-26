@@ -1,3 +1,4 @@
+import About from "./About";
 import Home from "./Home";
 import ProductDetailPage from "./ProductDetailPage";
 import ShopPage from "./ShopPage";
@@ -10,6 +11,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
             <Route path="/shop" element={<ShopPage />} />
             <Route path="/product/:pid" element={<ProductDetailPage />} />
           </Routes>

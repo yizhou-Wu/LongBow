@@ -89,7 +89,9 @@ const NaviBar = (props: Props) => {
                 <li>
                   <a href="/shop">Shop</a>
                 </li>
-                <li>About</li>
+                <li>
+                  <a href="/about">About</a>
+                </li>
                 <li>Contact</li>
               </ul>
             </div>
