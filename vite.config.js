@@ -10,5 +10,5 @@ export default defineConfig({
     })
   ],
   define: {'process.env': process.env,
-  'process.env.PUBLIC_URL': JSON.stringify('./public')}
+  'process.env.PUBLIC_URL': JSON.stringify('./')}
 })
